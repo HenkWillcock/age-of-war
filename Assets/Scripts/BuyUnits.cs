@@ -8,38 +8,32 @@ public class BuyUnits : MonoBehaviour
     public Player redPlayer;
 
     public GameObject soldierPrefab;
+    public GameObject tankPrefab;
 
     void Update()
     {
         if (Input.GetKeyUp("q")) {
-            this.BuyUnit(this.soldierPrefab, this.bluePlayer);
+            this.bluePlayer.BuyUnit(this.soldierPrefab);
         }
 
         if (Input.GetKeyUp("[7]") || Input.GetKeyUp("home")) {
-            this.BuyUnit(this.soldierPrefab, this.redPlayer);
-        }
-    }
-
-    void BuyUnit(GameObject prefab, Player player) {
-        int cost = prefab.GetComponent<Unit>().cost;
-        if (player.money >= cost) {
-            player.money -= cost;
-        } else {
-            // Can't afford.
-            return;
+            this.redPlayer.BuyUnit(this.soldierPrefab);
         }
 
-        GameObject unit = Object.Instantiate(
-            this.soldierPrefab, 
-            player.playerBase.transform.position,
-            new Quaternion(0, 0, 0, 0)
-        ) as GameObject;
+        if (Input.GetKeyUp("w")) {
+            this.bluePlayer.BuyBank();
+        }
 
-        Unit unitComponent = unit.GetComponent<Unit>();
-        unitComponent.owner = player;
+        if (Input.GetKeyUp("[8]") || Input.GetKeyUp("up")) {
+            this.redPlayer.BuyBank();
+        }
 
-        foreach (Renderer renderer in unit.GetComponentsInChildren<Renderer>()) {
-            renderer.material.color = player.color;
+        if (Input.GetKeyUp("e")) {
+            this.bluePlayer.BuyUnit(this.tankPrefab);
+        }
+
+        if (Input.GetKeyUp("[9]") || Input.GetKeyUp("page up")) {
+            this.redPlayer.BuyUnit(this.tankPrefab);
         }
     }
 }

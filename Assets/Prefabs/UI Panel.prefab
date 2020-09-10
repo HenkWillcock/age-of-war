@@ -50,8 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a7c7ef9b94839fe866cadabebea0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 200
   moneyText: {fileID: 5137903487133947183}
+  playerBase: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  reverseDirection: 0
+  money: 200
+  income: 10
+  lives: 5
 --- !u!1 &5137903487133947177
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,8 +132,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Blue Player Panel
 --- !u!1 &5137903487205027702
