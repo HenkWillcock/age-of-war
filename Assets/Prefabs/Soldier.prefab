@@ -138,8 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c86898feaed2d71914b0e66a0aae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 0
   rigidbody: {fileID: 5979835952489718887}
   topSpeed: 2
+  cost: 10
 --- !u!54 &5979835952489718887
 Rigidbody:
   m_ObjectHideFlags: 0
