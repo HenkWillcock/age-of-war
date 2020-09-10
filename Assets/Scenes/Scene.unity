@@ -341,7 +341,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 250, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &882654728
 MonoBehaviour:
@@ -376,7 +376,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Q / 7  :  Soldier ($10)\nW / 8  :  Bank ($50)\nE / 9  :  Tank ($50)\x1A\x1A"
+  m_Text: 'Q / 7  :  Pawn ($10)   W / 8  :  Tank ($50)
+
+    A / 4  :  Bank ($50)   S / 5  :  Cannon ($100)
+
+'
 --- !u!222 &882654729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -561,8 +565,9 @@ GameObject:
   - component: {fileID: 1244530391}
   - component: {fileID: 1244530393}
   - component: {fileID: 1244530392}
+  - component: {fileID: 1244530394}
   m_Layer: 5
-  m_Name: Controls
+  m_Name: Game Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,6 +630,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244530390}
   m_CullTransparentMesh: 0
+--- !u!114 &1244530394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244530390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633504bedbf4b5bf8abdf1937919b0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePlayer: {fileID: 652718274}
+  redPlayer: {fileID: 1027381031}
+  pawnPrefab: {fileID: 5579207160446813518, guid: d09c59cdb28cdceb18b2699f2873edf4,
+    type: 3}
+  tankPrefab: {fileID: 7453000480646400879, guid: 3e9affeeb4b352dd7b962c4eb1bdb103,
+    type: 3}
+  cannonPrefab: {fileID: 3077122570513425426, guid: 2babcc740ab936e8e9863f122c597d55,
+    type: 3}
+  gameControllerText: {fileID: 882654728}
 --- !u!4 &1344459454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1005134852400005334, guid: 920712c825b402a24841d585ab73e2eb,
@@ -668,6 +694,16 @@ PrefabInstance:
       propertyPath: enemyBase
       value: 
       objectReference: {fileID: 1344459454}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: name
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1244530394}
     - target: {fileID: 5137903485584602979, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Name
@@ -879,7 +915,7 @@ RectTransform:
   - {fileID: 1027381030}
   - {fileID: 1244530391}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -956,57 +992,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1917977664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1917977665}
-  - component: {fileID: 1917977666}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1917977665
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917977664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6019893, y: 4.0539517, z: -1.8785267}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1917977666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917977664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 633504bedbf4b5bf8abdf1937919b0ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bluePlayer: {fileID: 652718274}
-  redPlayer: {fileID: 1027381031}
-  soldierPrefab: {fileID: 5579207160446813518, guid: d09c59cdb28cdceb18b2699f2873edf4,
-    type: 3}
-  tankPrefab: {fileID: 7453000480646400879, guid: 3e9affeeb4b352dd7b962c4eb1bdb103,
-    type: 3}
 --- !u!1 &2051634340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1083,7 @@ Transform:
   m_LocalScale: {x: 31, y: 0.2, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5137903486085973923
 PrefabInstance:
@@ -1130,6 +1117,16 @@ PrefabInstance:
       propertyPath: enemyBase
       value: 
       objectReference: {fileID: 1738680560}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: name
+      value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1244530394}
     - target: {fileID: 5137903485584602979, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Name
@@ -1262,7 +1259,7 @@ PrefabInstance:
     - target: {fileID: 1005134852400005334, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1005134852400005334, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}

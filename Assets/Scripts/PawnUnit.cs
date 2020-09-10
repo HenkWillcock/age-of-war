@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierUnit : Unit
+public class PawnUnit : MovingUnit
 {
     public bool standing = true;
 
@@ -16,7 +16,6 @@ public class SoldierUnit : Unit
     }
 
     void OnCollisionEnter(Collision collision) {
-        Debug.Log(collision);
         if (collision.gameObject.GetComponent<Unit>() != null) {
 
             this.standing = false;

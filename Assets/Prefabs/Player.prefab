@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5137903485584602978}
   - component: {fileID: 1711721220532422304}
   m_Layer: 5
-  m_Name: UI Panel
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,12 +51,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 5137903487133947183}
-  playerBase: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  reverseDirection: 0
+  name: 
+  playerBase: {fileID: 0}
+  enemyBase: {fileID: 0}
+  gameController: {fileID: 0}
+  nukePrefab: {fileID: 929928445692378689, guid: f10f54fef3adf1a8b9e1681e93c2c7ad,
+    type: 3}
   money: 200
   income: 10
-  lives: 5
+  lives: 10
 --- !u!1 &5137903487133947177
 GameObject:
   m_ObjectHideFlags: 0
