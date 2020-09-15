@@ -38,10 +38,20 @@ public class Player : MonoBehaviour
             nukeText = "Nuke ready in " + this.timeUntilNuke + " second.";
         }
 
+        string livesText = "";
+        if (this.lives == 0) {
+            livesText = "Last life!";
+        } else {
+            livesText = "Lives: ";
+            for (int i = 0; i < this.lives; i++) {
+                livesText += "# ";
+            }
+        }
+
         moneyText.text = 
                 "$" + this.money + "\n" +
                 "$" + this.income + " Income" + "\n" +
-                this.lives + " Lives" + "\n" +
+                livesText + "\n" +
                 nukeText;
     }
 
@@ -51,7 +61,9 @@ public class Player : MonoBehaviour
 
     public void LoseALife() {
         this.lives--;
-        if (this.lives <= 0) {
+
+        // Still alive on 0 lives.
+        if (this.lives < 0) {
             this.gameController.LoseGame(this.name);
             Destroy(this.playerBase.gameObject);
             Destroy(this.gameObject);

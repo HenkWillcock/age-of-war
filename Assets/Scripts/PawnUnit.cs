@@ -7,7 +7,7 @@ public class PawnUnit : MovingUnit
     public bool standing = true;
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         base.Update();
         if (this.standing) {

@@ -376,8 +376,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Pawn ($10)   Jumper  ($30)\nTank ($50)    Heli        ($100)\nBank ($50)
-    \   Cannon ($100)   Nuke ($200)\n\x13\x13"
+  m_Text: "Pawn ($10)   Tank ($50)    Bank ($50)\n\nNinja ($30)    Heli ($100)   Cannon
+    ($100)\n\x13\n                                            Nuke ($200)\n\x13\x13"
 --- !u!222 &882654729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -643,11 +643,13 @@ MonoBehaviour:
   redPlayer: {fileID: 1027381031}
   pawnPrefab: {fileID: 5579207160446813518, guid: d09c59cdb28cdceb18b2699f2873edf4,
     type: 3}
+  ninjaPrefab: {fileID: 768049118821694233, guid: 7a3b2603aff6c7dd9b96f8bd4070f8a2,
+    type: 3}
   tankPrefab: {fileID: 7453000480646400879, guid: 3e9affeeb4b352dd7b962c4eb1bdb103,
     type: 3}
-  cannonPrefab: {fileID: 3077122570513425426, guid: 2babcc740ab936e8e9863f122c597d55,
-    type: 3}
   heliPrefab: {fileID: 7736961245709303741, guid: bc42b00a8e9e414b38702aff58febc4c,
+    type: 3}
+  cannonPrefab: {fileID: 3077122570513425426, guid: 2babcc740ab936e8e9863f122c597d55,
     type: 3}
   gameControllerText: {fileID: 882654728}
 --- !u!4 &1344459454 stripped
@@ -1019,7 +1021,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051634340}
-  m_Material: {fileID: 13400000, guid: 19d915522e9d00c3f98bff6f9985607c, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -12,7 +12,9 @@ public class HeliUnit : MovingUnit
     private float targetAltitude = 5;
 
     public void Update() {
-        base.Update();
+        if (this.enabled) {
+            base.Update();
+        }
 
         if (Vector3.Distance(this.rigidbody.position, this.owner.playerBase.position) > 3) {
             this.flying = true;
@@ -27,7 +29,7 @@ public class HeliUnit : MovingUnit
 
             this.rigidbody.angularVelocity *= 0.9f;
 
-            if (this.readyToFire && this.NearestEnemyDistance() < 15) {
+            if (this.readyToFire && this.NearestEnemyDistance() < 10) {
                 Vector3 enemyLocation = this.NearestEnemyLocation();
                 this.FireProjectileAtTarget(this.cannonBallPrefab, enemyLocation, 20);
                 this.readyToFire = false;

@@ -142,7 +142,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   rigidbody: {fileID: 5979835952489718887}
   cost: 10
-  topSpeed: 2
+  topSpeed: 1.5
   accelleration: 1
   standing: 1
 --- !u!54 &5979835952489718887

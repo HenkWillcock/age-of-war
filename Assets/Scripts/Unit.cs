@@ -25,22 +25,31 @@ public class Unit : MonoBehaviour
         }
     }
 
-    protected Vector3 NearestEnemyLocation() {
-        Unit[] units = Object.FindObjectsOfType<MovingUnit>();
+    protected MovingUnit NearestEnemyUnit() {
+        MovingUnit[] units = Object.FindObjectsOfType<MovingUnit>();
 
-        Unit closestEnemyUnit = null;
+        MovingUnit closestEnemyUnit = null;
         float closestEnemyDistance = 99999999999;
 
-        foreach (Unit unit in units) {
+        foreach (MovingUnit unit in units) {
             float distanceToUnit = Vector3.Distance(this.rigidbody.position, unit.rigidbody.position);
+            bool notYours = unit.owner != this.owner;
+            bool notNinja = unit.GetComponent<NinjaUnit>() == null;
 
-            if (distanceToUnit < closestEnemyDistance && unit.owner != this.owner) {
+            if (distanceToUnit < closestEnemyDistance && notYours && notNinja) {
                 closestEnemyDistance = distanceToUnit;
                 closestEnemyUnit = unit;
             }
         }
 
-        return closestEnemyUnit.rigidbody.position;
+        return closestEnemyUnit;
+    }
+
+    protected Vector3 NearestEnemyLocation() {
+        if (this.NearestEnemyUnit() != null) {
+            return this.NearestEnemyUnit().rigidbody.position;
+        }
+        return this.owner.enemyBase.position;
     }
 
     protected float NearestEnemyDistance() {
@@ -71,5 +80,17 @@ public class Unit : MonoBehaviour
 
     protected bool IsUpsideDown() {
         return Vector3.Dot(transform.up, Vector3.down) > 0;
+    }
+
+    void OnTriggerEnter(Collider collider) {
+        Base baseComponent = collider.gameObject.GetComponent<Base>();
+
+        if (baseComponent != null) {
+            Player baseOwner = baseComponent.owner;
+            if (this.owner != baseOwner) {
+                baseOwner.LoseALife();
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

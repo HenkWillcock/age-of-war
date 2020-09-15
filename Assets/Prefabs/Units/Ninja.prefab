@@ -101,10 +101,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6706434008955660578}
-  - component: {fileID: 3798337163955433719}
   - component: {fileID: 1529357853034732080}
+  - component: {fileID: 4289567641321229404}
   m_Layer: 0
-  m_Name: Jumper
+  m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,24 +127,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3798337163955433719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768049118821694233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0c86898feaed2d71914b0e66a0aae0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 0}
-  rigidbody: {fileID: 1529357853034732080}
-  cost: 10
-  topSpeed: 2
-  accelleration: 1
-  standing: 1
 --- !u!54 &1529357853034732080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161,6 +143,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4289567641321229404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768049118821694233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc305873819c5c79483614c785ba9e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  rigidbody: {fileID: 1529357853034732080}
+  cost: 30
+  topSpeed: 2.5
+  accelleration: 1
+  standing: 1
+  jumpPower: 6
+  jumpDistance: 5
 --- !u!1 &2314246530976515646
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +251,6 @@ GameObject:
   - component: {fileID: 6170387042107767345}
   - component: {fileID: 4087031856402698081}
   - component: {fileID: 1989687713705147167}
-  - component: {fileID: 8499675545094557112}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -316,17 +317,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8499675545094557112
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037543776458895718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

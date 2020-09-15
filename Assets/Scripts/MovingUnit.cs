@@ -20,16 +20,4 @@ public class MovingUnit : Unit
             this.rigidbody.AddForce(towardsEnemy*accellerationMagnitude, ForceMode.Impulse);
         }
     }
-
-    void OnTriggerEnter(Collider collider) {
-        Base baseComponent = collider.gameObject.GetComponent<Base>();
-
-        if (baseComponent != null) {
-            Player baseOwner = baseComponent.owner;
-            if (this.owner != baseOwner) {
-                baseOwner.LoseALife();
-                Destroy(this.gameObject);
-            }
-        }
-    }
 }
