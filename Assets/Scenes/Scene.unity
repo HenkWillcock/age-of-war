@@ -376,11 +376,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Pawn ($10)    Tank ($50)          Heli ($100)
-
-    Bank ($50)     Cannon ($100)   Nuke ($200)
-
-'
+  m_Text: "Pawn ($10)   Jumper  ($30)\nTank ($50)    Heli        ($100)\nBank ($50)
+    \   Cannon ($100)   Nuke ($200)\n\x13\x13"
 --- !u!222 &882654729
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ Increases income by $5 per 5 seconds.
 
 ### Cannon
 
-Takes out one unit, then needs to wait 10 seconds to recharge.
+Takes out one unit, then needs to wait 10 seconds to recharge. Very effective against choppers.
 
 ### Nuke
 

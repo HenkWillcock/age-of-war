@@ -43,6 +43,10 @@ public class Unit : MonoBehaviour
         return closestEnemyUnit.rigidbody.position;
     }
 
+    protected float NearestEnemyDistance() {
+        return Vector3.Distance(this.rigidbody.position, this.NearestEnemyLocation());
+    }
+
     protected void FireProjectileAtTarget(GameObject projectilePrefab, Vector3 target, float speed) {
         Vector3 towardsTarget = target - this.rigidbody.position;
         towardsTarget.Normalize();
