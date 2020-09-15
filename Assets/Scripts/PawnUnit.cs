@@ -17,7 +17,6 @@ public class PawnUnit : MovingUnit
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.GetComponent<Unit>() != null) {
-
             this.standing = false;
         }
     }

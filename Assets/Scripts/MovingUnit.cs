@@ -5,23 +5,23 @@ using UnityEngine;
 public class MovingUnit : Unit
 {
     public float topSpeed;
+    public float accelleration;
 
-    // Update is called once per frame
     protected void Update()
     {
         base.Update();
 
         Vector3 towardsEnemy = this.owner.enemyBase.transform.position - this.rigidbody.position;
         towardsEnemy.Normalize();
-        float accellerationMagnitude = (1 - this.rigidbody.velocity.magnitude/topSpeed) * topSpeed;
+        float accellerationMagnitude = (1 - this.rigidbody.velocity.magnitude/topSpeed) * accelleration;
 
         if (accellerationMagnitude > 0) {
+            // TODO don't just blindly travel towards enemy base, must be facing the right direction.
             this.rigidbody.AddForce(towardsEnemy*accellerationMagnitude, ForceMode.Impulse);
         }
     }
 
     void OnTriggerEnter(Collider collider) {
-        // TODO double lives lost bug
         Base baseComponent = collider.gameObject.GetComponent<Base>();
 
         if (baseComponent != null) {

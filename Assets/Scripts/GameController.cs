@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject pawnPrefab;
     public GameObject tankPrefab;
     public GameObject cannonPrefab;
+    public GameObject heliPrefab;
 
     public Text gameControllerText;
 
@@ -25,13 +26,17 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyUp("w")) {this.bluePlayer.BuyUnit(this.tankPrefab);}
         if (Input.GetKeyUp("[8]") || Input.GetKeyUp("up")) {this.redPlayer.BuyUnit(this.tankPrefab);}
 
+        // E/9: Tank
+        if (Input.GetKeyUp("e")) {this.bluePlayer.BuyUnit(this.heliPrefab);}
+        if (Input.GetKeyUp("[9]") || Input.GetKeyUp("page up")) {this.redPlayer.BuyUnit(this.heliPrefab);}
+
         // A/4: Bank
         if (Input.GetKeyUp("a")) {this.bluePlayer.BuyBank();}
         if (Input.GetKeyUp("[4]") || Input.GetKeyUp("left")) {this.redPlayer.BuyBank();}
 
         // S/5: Cannon
         if (Input.GetKeyUp("s")) {this.bluePlayer.BuyUnit(cannonPrefab);}
-        if (Input.GetKeyUp("[5]") || Input.GetKeyUp("page up")) {this.redPlayer.BuyUnit(cannonPrefab);}
+        if (Input.GetKeyUp("[5]")) {this.redPlayer.BuyUnit(cannonPrefab);}
 
         // D/6: Nuke
         if (Input.GetKeyUp("d")) {this.bluePlayer.BuyOrUseNuke();}

@@ -376,9 +376,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Q / 7  :  Pawn ($10)   W / 8  :  Tank ($50)
+  m_Text: 'Pawn ($10)    Tank ($50)          Heli ($100)
 
-    A / 4  :  Bank ($50)   S / 5  :  Cannon ($100)
+    Bank ($50)     Cannon ($100)   Nuke ($200)
 
 '
 --- !u!222 &882654729
@@ -497,16 +497,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 140594961302651270, guid: 920712c825b402a24841d585ab73e2eb,
-        type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 1027381031}
     - target: {fileID: 8152067282354680896, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}
       propertyPath: m_Name
       value: Red Base
       objectReference: {fileID: 0}
+    - target: {fileID: 140594961302651270, guid: 920712c825b402a24841d585ab73e2eb,
+        type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 1027381031}
     - target: {fileID: 1005134852400005334, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -650,6 +650,8 @@ MonoBehaviour:
     type: 3}
   cannonPrefab: {fileID: 3077122570513425426, guid: 2babcc740ab936e8e9863f122c597d55,
     type: 3}
+  heliPrefab: {fileID: 7736961245709303741, guid: bc42b00a8e9e414b38702aff58febc4c,
+    type: 3}
   gameControllerText: {fileID: 882654728}
 --- !u!4 &1344459454 stripped
 Transform:
@@ -664,46 +666,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642536275}
     m_Modifications:
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: playerBase
-      value: 
-      objectReference: {fileID: 1738680560}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: reverseDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: enemyBase
-      value: 
-      objectReference: {fileID: 1344459454}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: name
-      value: Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 1244530394}
     - target: {fileID: 5137903485584602979, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Name
@@ -814,6 +776,46 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: playerBase
+      value: 
+      objectReference: {fileID: 1738680560}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: reverseDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: enemyBase
+      value: 
+      objectReference: {fileID: 1344459454}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: name
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1244530394}
     - target: {fileID: 5137903487133947183, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Text
@@ -1092,41 +1094,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642536275}
     m_Modifications:
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: playerBase
-      value: 
-      objectReference: {fileID: 1344459454}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.r
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.g
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: enemyBase
-      value: 
-      objectReference: {fileID: 1738680560}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: name
-      value: Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 1244530394}
     - target: {fileID: 5137903485584602979, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Name
@@ -1237,6 +1204,41 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: playerBase
+      value: 
+      objectReference: {fileID: 1344459454}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.r
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: enemyBase
+      value: 
+      objectReference: {fileID: 1738680560}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: name
+      value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1244530394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3f0bc2f38e968048827a35a48de385, type: 3}
 --- !u!1001 &7865754606953365891
@@ -1246,16 +1248,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 140594961302651270, guid: 920712c825b402a24841d585ab73e2eb,
-        type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 652718274}
     - target: {fileID: 8152067282354680896, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}
       propertyPath: m_Name
       value: Blue Base
       objectReference: {fileID: 0}
+    - target: {fileID: 140594961302651270, guid: 920712c825b402a24841d585ab73e2eb,
+        type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 652718274}
     - target: {fileID: 1005134852400005334, guid: 920712c825b402a24841d585ab73e2eb,
         type: 3}
       propertyPath: m_RootOrder

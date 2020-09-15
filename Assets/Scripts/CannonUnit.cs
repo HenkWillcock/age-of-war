@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class CannonUnit : Unit
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        base.Start();
-    }
+    public GameObject cannonBallPrefab;
 
     void Update()
     {
         base.Update();
+
+        if (this.readyToFire) {
+            Vector3 enemyLocation = this.NearestEnemyLocation();
+
+            if (Vector3.Distance(this.rigidbody.position, enemyLocation) < 12) {
+                this.FireProjectileAtTarget(this.cannonBallPrefab, enemyLocation, 50);
+                this.readyToFire = false;
+                StartCoroutine(this.Reload(10));
+            }
+        }
     }
 }

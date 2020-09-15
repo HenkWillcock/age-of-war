@@ -7,7 +7,11 @@ public class TankUnit : MovingUnit
     // Update is called once per frame
     void Update()
     {
-        base.Update();
+        if (!this.IsUpsideDown()) {
+            base.Update();
+        }
         // TODO shoot balls
+
+        // TODO nerf somehow.
     }
 }

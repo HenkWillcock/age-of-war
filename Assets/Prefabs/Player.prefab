@@ -58,9 +58,9 @@ MonoBehaviour:
   gameController: {fileID: 0}
   nukePrefab: {fileID: 929928445692378689, guid: f10f54fef3adf1a8b9e1681e93c2c7ad,
     type: 3}
-  money: 200
+  money: 250
   income: 10
-  lives: 10
+  lives: 6
 --- !u!1 &5137903487133947177
 GameObject:
   m_ObjectHideFlags: 0

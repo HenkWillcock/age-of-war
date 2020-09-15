@@ -99,10 +99,10 @@ public class Player : MonoBehaviour
 
     public void BuyOrUseNuke() {
         if (this.timeUntilNuke == 0) {
-            this.timeUntilNuke = 20;
+            this.timeUntilNuke = 30;
             this.CreateUnit(this.nukePrefab);
-        } else if (this.timeUntilNuke == -1 && this.money >= 200) {
-            this.money -= 200;
+        } else if (this.timeUntilNuke == -1 && this.money >= 250) {
+            this.money -= 250;
             this.timeUntilNuke = 0;
             InvokeRepeating("NukeCountdown", 1f, 1f);
         }
