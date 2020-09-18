@@ -70,17 +70,17 @@ public class GameController : MonoBehaviour
 
         int highestTechLevel = Math.Max(this.redPlayer.techLevel, this.bluePlayer.techLevel);
 
-        string mainText = "Pawn ($10)   Tank ($50)    Bank ($50)\n\n";
+        string mainText = "Pawn ($10)   Tank ($50)      Bank ($50)\n\n";
 
         if (highestTechLevel >= 2) {
-            mainText += "Ninja ($30)    Heli ($100)   Cannon ($100)";
+            mainText += "Ninja ($30)    Heli ($100)      Cannon ($100)";
         }
         mainText += "\n\n";
 
         if (highestTechLevel >= 3) {
-            mainText += "                                          Improve Tech";
+            mainText += "Hero ($200)   Plane ($150)   Improve Tech";
         } else {
-            mainText += "                                          Improve Tech";
+            mainText += "                                             Improve Tech";
         }
 
         this.gameControllerText.text = mainText;
