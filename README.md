@@ -12,11 +12,11 @@
 
 ### Pawn
 
-Crap at fighting, but great for taking down the enemy's lives if you can get them to their base.
+Bad at fighting, but very cheap so great for taking cannon shots and taking down the enemy's lives if you can get them to their base. Can also repair damaged vehicles.
 
 ### Ninja
 
-Can jump over helicopter bullets, and can jump to take down helicopters and harriers. Invisible to helicopters and cannons.
+Can jump over ground units, and can jump to take down flying units. Invisible to helicopters and cannons.
 
 ### Commando
 
@@ -26,18 +26,18 @@ TODO, something badass. One of: mind-control,
 
 ### Tank
 
-Can bump off multiple pawns, but only worth 1 life if you get it to the enemies base.
-Won't move if it's flipped over.
+Can bump off many pawns, but only worth 1 life if you get it to the enemies base. Weak against helicopters. Won't move if it's flipped over.
+
 Benchmark: Should be able to consistently take out 5 pawns.
 
 ### Heli
 
-Can take out many tanks and pawns, but is vulnerable to cannons. Can't see ninjas to fire at them. Takes a while to take off, its vulnerable during this time.
+Can take out many tanks and pawns, but is vulnerable to cannons and ninjas. Takes a while to take off when first bought, is vulnerable during this time.
 Benchmark: Should be able to consistently take out 2 tanks at once.
 
 ### Harrier
 
-Sits at your base to recharge. Can then perform airstrikes and return to your base.
+Sits at your base to recharge. Can then perform airstrikes against the nearest enemy and return to your base.
 
 ## Structures
 

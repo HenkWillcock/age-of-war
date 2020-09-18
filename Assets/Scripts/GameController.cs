@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public GameObject tankPrefab;
     public GameObject heliPrefab;
+    public GameObject planePrefab;
 
     public GameObject cannonPrefab;
 
@@ -49,17 +51,39 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyUp("z")) {}
         if (Input.GetKeyUp("[1]") || Input.GetKeyUp("end")) {}
 
-        // X/2: Harrier  TODO
-        if (Input.GetKeyUp("x")) {}
-        if (Input.GetKeyUp("[2]") || Input.GetKeyUp("down")) {}
+        // X/2: Plane
+        if (Input.GetKeyUp("x")) {this.bluePlayer.BuyUnit(this.planePrefab);}
+        if (Input.GetKeyUp("[2]") || Input.GetKeyUp("down")) {this.redPlayer.BuyUnit(this.planePrefab);}
 
         // C/3: Nuke
-        if (Input.GetKeyUp("c")) {this.bluePlayer.BuyOrUseNuke();}
-        if (Input.GetKeyUp("[3]") || Input.GetKeyUp("page down")) {this.redPlayer.BuyOrUseNuke();}
+        if (Input.GetKeyUp("c")) {this.bluePlayer.ImproveTechOrUseNuke();}
+        if (Input.GetKeyUp("[3]") || Input.GetKeyUp("page down")) {this.redPlayer.ImproveTechOrUseNuke();}
 
         if (Input.GetKeyUp("escape")) {
-            SceneManager.LoadScene("Scene");
+            if (Input.GetKey("left shift")) {
+                this.bluePlayer.money += 10000;
+                this.redPlayer.money += 10000;
+            } else {
+                SceneManager.LoadScene("Scene");
+            }
         }
+
+        int highestTechLevel = Math.Max(this.redPlayer.techLevel, this.bluePlayer.techLevel);
+
+        string mainText = "Pawn ($10)   Tank ($50)    Bank ($50)\n\n";
+
+        if (highestTechLevel >= 2) {
+            mainText += "Ninja ($30)    Heli ($100)   Cannon ($100)";
+        }
+        mainText += "\n\n";
+
+        if (highestTechLevel >= 3) {
+            mainText += "                                          Improve Tech";
+        } else {
+            mainText += "                                          Improve Tech";
+        }
+
+        this.gameControllerText.text = mainText;
     }
 
     public void LoseGame(string loserName) {

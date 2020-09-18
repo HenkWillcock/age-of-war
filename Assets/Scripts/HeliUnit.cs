@@ -26,7 +26,6 @@ public class HeliUnit : MovingUnit
             float lift = (1 - this.rigidbody.position.y/this.targetAltitude) * 0.5f;
             this.rigidbody.AddForce(Vector3.up * lift, ForceMode.Impulse);
             this.rigidbody.velocity *= 0.9f;
-
             this.rigidbody.angularVelocity *= 0.9f;
 
             if (this.readyToFire && this.NearestEnemyDistance() < 10) {

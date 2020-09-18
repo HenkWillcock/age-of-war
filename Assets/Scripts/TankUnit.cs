@@ -10,8 +10,5 @@ public class TankUnit : MovingUnit
         if (!this.IsUpsideDown()) {
             base.Update();
         }
-        // TODO shoot balls
-
-        // TODO nerf somehow.
     }
 }

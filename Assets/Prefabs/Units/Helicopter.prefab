@@ -416,6 +416,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   rigidbody: {fileID: 5994631760098215462}
   cost: 100
+  techLevel: 2
   topSpeed: 0.8
   accelleration: 1
   rotorBlades: {fileID: 3394950750729593188}

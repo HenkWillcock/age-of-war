@@ -65,6 +65,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   rigidbody: {fileID: -8712239505174499955}
   cost: 100
+  techLevel: 2
   cannonBallPrefab: {fileID: 6668854518087076083, guid: bd5356147c1574769a899d3c757786cc,
     type: 3}
 --- !u!1 &8150257818139251088

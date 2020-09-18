@@ -7,6 +7,7 @@ public class Unit : MonoBehaviour
     public Player owner;
     public Rigidbody rigidbody;
     public int cost;
+    public int techLevel;
 
     protected bool readyToFire = true;
 
@@ -16,6 +17,10 @@ public class Unit : MonoBehaviour
 
     protected void Update()
     {
+        if (this.rigidbody.position.y < -20) {
+            Destroy(this.gameObject);
+        }
+
         if (this.owner == null) {
             Destroy(this.gameObject);
         }
@@ -25,13 +30,19 @@ public class Unit : MonoBehaviour
         }
     }
 
-    protected MovingUnit NearestEnemyUnit() {
-        MovingUnit[] units = Object.FindObjectsOfType<MovingUnit>();
+    protected Unit NearestEnemyUnit() {
+        Unit[] movingUnits = Object.FindObjectsOfType<MovingUnit>();
+        Unit[] cannons = Object.FindObjectsOfType<CannonUnit>();
 
-        MovingUnit closestEnemyUnit = null;
+        Unit[] units = new Unit[movingUnits.Length + cannons.Length];
+
+        movingUnits.CopyTo(units, 0);
+        cannons.CopyTo(units, movingUnits.Length);
+
+        Unit closestEnemyUnit = null;
         float closestEnemyDistance = 99999999999;
 
-        foreach (MovingUnit unit in units) {
+        foreach (Unit unit in units) {
             float distanceToUnit = Vector3.Distance(this.rigidbody.position, unit.rigidbody.position);
             bool notYours = unit.owner != this.owner;
             bool notNinja = unit.GetComponent<NinjaUnit>() == null;
@@ -78,7 +89,7 @@ public class Unit : MonoBehaviour
         this.readyToFire = true;
     }
 
-    protected bool IsUpsideDown() {
+    public bool IsUpsideDown() {
         return Vector3.Dot(transform.up, Vector3.down) > 0;
     }
 
@@ -92,5 +103,10 @@ public class Unit : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void Repair() {
+        this.rigidbody.rotation = new Quaternion(0, 0, 0, 0).normalized;
+        this.rigidbody.transform.LookAt(this.owner.enemyBase.transform.position);
     }
 }

@@ -377,7 +377,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Pawn ($10)   Tank ($50)    Bank ($50)\n\nNinja ($30)    Heli ($100)   Cannon
-    ($100)\n\x13\n                                            Nuke ($200)\n\x13\x13"
+    ($100)\n\x13\n                                          Improve Tech\n\x13\x13"
 --- !u!222 &882654729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -649,6 +649,8 @@ MonoBehaviour:
     type: 3}
   heliPrefab: {fileID: 7736961245709303741, guid: bc42b00a8e9e414b38702aff58febc4c,
     type: 3}
+  planePrefab: {fileID: 3382863708563570563, guid: 0b37eb4e285b34e04b9de28a0bab8e9a,
+    type: 3}
   cannonPrefab: {fileID: 3077122570513425426, guid: 2babcc740ab936e8e9863f122c597d55,
     type: 3}
   gameControllerText: {fileID: 882654728}
@@ -728,7 +730,7 @@ PrefabInstance:
     - target: {fileID: 5137903485584602978, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -125
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 5137903485584602978, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
@@ -815,6 +817,11 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1244530394}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5137903487133947183, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
       propertyPath: m_Text
@@ -1210,21 +1217,6 @@ PrefabInstance:
       objectReference: {fileID: 1344459454}
     - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
         type: 3}
-      propertyPath: color.r
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.g
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
-        type: 3}
       propertyPath: enemyBase
       value: 
       objectReference: {fileID: 1738680560}
@@ -1238,6 +1230,26 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1244530394}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.g
+      value: 0.27892852
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711721220532422304, guid: cf3f0bc2f38e968048827a35a48de385,
+        type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3f0bc2f38e968048827a35a48de385, type: 3}
 --- !u!1001 &7865754606953365891

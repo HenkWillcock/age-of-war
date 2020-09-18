@@ -16,7 +16,7 @@ public class CannonUnit : Unit
             if (Vector3.Distance(this.rigidbody.position, enemyLocation) < 15) {
                 this.FireProjectileAtTarget(this.cannonBallPrefab, enemyLocation, 50);
                 this.readyToFire = false;
-                StartCoroutine(this.Reload(10));
+                StartCoroutine(this.Reload(15));
             }
         }
     }

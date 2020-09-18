@@ -51,15 +51,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 5137903487133947183}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  background: {fileID: 5137903487205027700}
+  color: {r: 1, g: 1, b: 1, a: 0}
   name: 
   playerBase: {fileID: 0}
   enemyBase: {fileID: 0}
   gameController: {fileID: 0}
   nukePrefab: {fileID: 929928445692378689, guid: f10f54fef3adf1a8b9e1681e93c2c7ad,
     type: 3}
-  money: 250
-  income: 10
+  money: 200
+  banks: 2
   lives: 5
 --- !u!1 &5137903487133947177
 GameObject:
@@ -175,7 +176,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5137903487205027707
 CanvasRenderer:
