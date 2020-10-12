@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
 
         // W/8: Tank
         if (Input.GetKeyUp("w")) {this.bluePlayer.BuyUnit(this.tankPrefab);}
-        if (Input.GetKeyUp("[8]") || Input.GetKeyUp("up")) {this.redPlayer.BuyUnit(this.tankPrefab);}
+        if (Input.GetKeyUp("[8]") || Input.GetKeyUp("up") || Input.GetKeyUp("o")) {this.redPlayer.BuyUnit(this.tankPrefab);}
 
         // E/9: Bank
         if (Input.GetKeyUp("e")) {this.bluePlayer.BuyBank();}
@@ -53,11 +53,11 @@ public class GameController : MonoBehaviour
 
         // X/2: Plane
         if (Input.GetKeyUp("x")) {this.bluePlayer.BuyUnit(this.planePrefab);}
-        if (Input.GetKeyUp("[2]") || Input.GetKeyUp("down")) {this.redPlayer.BuyUnit(this.planePrefab);}
+        if (Input.GetKeyUp("[2]") || Input.GetKeyUp("down") || Input.GetKeyUp(".")) {this.redPlayer.BuyUnit(this.planePrefab);}
 
         // C/3: Nuke
         if (Input.GetKeyUp("c")) {this.bluePlayer.ImproveTechOrUseNuke();}
-        if (Input.GetKeyUp("[3]") || Input.GetKeyUp("page down")) {this.redPlayer.ImproveTechOrUseNuke();}
+        if (Input.GetKeyUp("[3]") || Input.GetKeyUp("page down") || Input.GetKeyUp("/")) {this.redPlayer.ImproveTechOrUseNuke();}
 
         if (Input.GetKeyUp("escape")) {
             if (Input.GetKey("left shift")) {

@@ -106,7 +106,12 @@ public class Player : MonoBehaviour
         }
 
         if (prefab.GetComponent<PlaneUnit>() != null) {
-            initialPosition += this.playerBase.transform.up*(3 + this.numberOfCannons*0.5f) + this.playerBase.transform.right*1.5f;
+            if (this.plane != null) {
+                this.plane.StartStrike();
+                return;
+            } else {
+                initialPosition += this.playerBase.transform.up*(3 + this.numberOfCannons*0.5f) + this.playerBase.transform.right*1.5f;
+            }
         }
 
         GameObject unit = Object.Instantiate(
@@ -115,7 +120,7 @@ public class Player : MonoBehaviour
             new Quaternion(0, 0, 0, 0)
         ) as GameObject;
 
-        unit.GetComponent<Unit>().owner = this;
+        unit.GetComponent<OwnedObject>().owner = this;
 
         if (unit.GetComponent<PlaneUnit>() != null) {
             this.plane = unit.GetComponent<PlaneUnit>();
@@ -145,9 +150,9 @@ public class Player : MonoBehaviour
 
     private int GetTechLivesIncrease() {
         if (this.techLevel == 1) {
-            return 2;
+            return 1;
         } else if (this.techLevel == 2) {
-            return 3;
+            return 2;
         } else {
             return 0;
         }

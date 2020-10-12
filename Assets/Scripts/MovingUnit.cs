@@ -10,14 +10,6 @@ public class MovingUnit : Unit
     protected void Update()
     {
         base.Update();
-
-        Vector3 towardsEnemy = this.owner.enemyBase.transform.position - this.rigidbody.position;
-        towardsEnemy.Normalize();
-        float accellerationMagnitude = (1 - this.rigidbody.velocity.magnitude/topSpeed) * accelleration;
-
-        if (accellerationMagnitude > 0) {
-            // TODO don't just blindly travel towards enemy base, must be facing the right direction.
-            this.rigidbody.AddForce(towardsEnemy*accellerationMagnitude, ForceMode.Impulse);
-        }
+        this.MoveTowardsTarget(this.accelleration, this.topSpeed, this.owner.enemyBase.transform.position);
     }
 }

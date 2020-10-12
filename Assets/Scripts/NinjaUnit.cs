@@ -13,17 +13,21 @@ public class NinjaUnit : PawnUnit
 
         if (this.standing) {
             bool willClearEnemy = false;
-            bool enemyIsHeli = false;
+            bool isFlyingEnemy = false;
 
             if (this.NearestEnemyUnit() != null) {
                 float averageVelocity = (this.NearestEnemyUnit().rigidbody.velocity.magnitude + this.rigidbody.velocity.magnitude)/2;
                 willClearEnemy = this.NearestEnemyDistance() < averageVelocity;
-                enemyIsHeli = this.NearestEnemyUnit().GetComponent<HeliUnit>() != null;
+                Debug.Log(this.NearestEnemyUnit());
+                isFlyingEnemy = 
+                    this.NearestEnemyUnit().GetComponent<HeliUnit>() != null ||
+                    this.NearestEnemyUnit().GetComponent<PlaneUnit>() != null ;
             }
 
-            bool willTakeDownHeli = enemyIsHeli && this.NearestEnemyDistance() < 3;
+            bool willTakeDownFlyer = isFlyingEnemy && this.NearestEnemyDistance() < 3;
+            // Debug.Log(isFlyingEnemy.ToString() + ' ' + willTakeDownFlyer.ToString());
 
-            if (this.readyToFire && (willClearEnemy || willTakeDownHeli)) {
+            if (this.readyToFire && (willClearEnemy || willTakeDownFlyer)) {
                 Vector3 currentVelocity = this.rigidbody.velocity;
                 currentVelocity.y = this.jumpPower;
                 this.rigidbody.velocity = currentVelocity;

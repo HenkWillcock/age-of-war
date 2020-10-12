@@ -54,12 +54,25 @@ Benchmark: Should have more range than heli.
 
 Clears the board and takes one life off your opponent.
 
-## TODO
+## TODO Long Term
 
  - Add UI for building, not just buttons.
  - Multiplayer on different machines.
  - Main menu
  - AI Opponent
+
+## TODO Short Term
+
+ - Cooldown after buying unit
+ - Ninja take down planes
+ - Planes fire less bullets
+ - The refactor
+
+
+
+
+
+
 
 
 

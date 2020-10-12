@@ -61,7 +61,8 @@ MonoBehaviour:
     type: 3}
   money: 200
   banks: 2
-  lives: 5
+  lives: 4
+  techLevel: 1
 --- !u!1 &5137903487133947177
 GameObject:
   m_ObjectHideFlags: 0

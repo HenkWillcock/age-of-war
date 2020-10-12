@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nuke : MovingUnit
+public class Nuke : OwnedObject
 {
-    void Start() {
-        base.Start();
+    protected void Start() {
+        this.rigidbody.transform.LookAt(this.owner.enemyBase);
         this.rigidbody.AddForce(100000 * transform.forward);
     }
 }

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class Unit : OwnedObject
 {
-    public Player owner;
-    public Rigidbody rigidbody;
     public int cost;
     public int techLevel;
 
@@ -17,27 +15,11 @@ public class Unit : MonoBehaviour
 
     protected void Update()
     {
-        if (this.rigidbody.position.y < -20) {
-            Destroy(this.gameObject);
-        }
-
-        if (this.owner == null) {
-            Destroy(this.gameObject);
-        }
-
-        if (this.owner.enemyBase == null) {
-            return;
-        }
+        base.Update();
     }
 
     protected Unit NearestEnemyUnit() {
-        Unit[] movingUnits = Object.FindObjectsOfType<MovingUnit>();
-        Unit[] cannons = Object.FindObjectsOfType<CannonUnit>();
-
-        Unit[] units = new Unit[movingUnits.Length + cannons.Length];
-
-        movingUnits.CopyTo(units, 0);
-        cannons.CopyTo(units, movingUnits.Length);
+        Unit[] units = Object.FindObjectsOfType<Unit>();
 
         Unit closestEnemyUnit = null;
         float closestEnemyDistance = 99999999999;
@@ -93,20 +75,18 @@ public class Unit : MonoBehaviour
         return Vector3.Dot(transform.up, Vector3.down) > 0;
     }
 
-    void OnTriggerEnter(Collider collider) {
-        Base baseComponent = collider.gameObject.GetComponent<Base>();
-
-        if (baseComponent != null) {
-            Player baseOwner = baseComponent.owner;
-            if (this.owner != baseOwner) {
-                baseOwner.LoseALife();
-                Destroy(this.gameObject);
-            }
-        }
-    }
-
     public void Repair() {
         this.rigidbody.rotation = new Quaternion(0, 0, 0, 0).normalized;
         this.rigidbody.transform.LookAt(this.owner.enemyBase.transform.position);
+    }
+
+    protected void MoveTowardsTarget(float accelleration, float topSpeed, Vector3 target) {
+        Vector3 towardsTarget = target - this.rigidbody.position;
+        towardsTarget.Normalize();
+        float accellerationMagnitude = (1 - this.rigidbody.velocity.magnitude/topSpeed) * accelleration;
+
+        if (accellerationMagnitude > 0) {
+            this.rigidbody.AddForce(towardsTarget*accellerationMagnitude, ForceMode.Impulse);
+        }
     }
 }
